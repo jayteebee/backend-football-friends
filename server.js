@@ -46,9 +46,7 @@ mongoose.connection.once('open', () => console.log('Connected to MongoDB'));
 app.use(express.json());
 
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-  })
+  cors()
 );
 
 
