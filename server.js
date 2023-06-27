@@ -10,10 +10,15 @@ const authenticationRoutes = require("./Routers/authentication");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 
-dotenv.config()
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 
-const port = process.env.EXPRESS_PORT || 5001
+
+// const port = process.env.EXPRESS_PORT || 5001
+const port = process.env.PORT || 5001;
+
 const localDB = 'mongodb://localhost:27017/football-friends'
 const currentDB = process.env.MONGODB_URI || localDB;
 

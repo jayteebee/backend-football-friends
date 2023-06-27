@@ -13,6 +13,7 @@
 // Indentify if development environment is Test or Development
 // const localDB = process.env.NODE_ENV === 'test' ? database.development : database.development;
 const port = process.env.EXPRESS_PORT || 5001
+
 const localDB = 'mongodb://localhost:27017/football-friends'
 
 // Environment variable MONGODB_URI will be avaiable in
