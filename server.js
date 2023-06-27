@@ -28,8 +28,8 @@ const profilePictureRouter = require("./Routers/profilePicture")
 
 
 const app = express();
-console.log(process.env.MONGODB_URI)
-console.log(process.env.EXPRESS_PORT)
+// console.log(process.env.MONGODB_URI)
+// console.log(process.env.EXPR ESS_PORT)
 console.log(currentDB)
 // Establish Database Connection
 mongoose.connect(currentDB, { useNewUrlParser: true });
