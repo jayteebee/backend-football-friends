@@ -12,6 +12,8 @@ const jwt = require("jsonwebtoken");
 const path = require('path');
 
 
+
+
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
@@ -86,7 +88,7 @@ app.use(profilePictureRouter)
 app.use("/uploads", express.static("uploads"));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../Football-Friends/front-end/football-friends-front-end/football-friends-front-end/build", 'index.html')); // replace 'client/build' with the path to your React app's build directory
+  res.sendFile(path.resolve(__dirname, "../Football-Friends/front-end/football-friends-front-end/football-friends-front-end/build/index.html")); // replace 'client/build' with the path to your React app's build directory
 });
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
