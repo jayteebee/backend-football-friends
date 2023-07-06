@@ -72,7 +72,8 @@ app.get(
 );
 
  
- 
+app.get('/', (req, res) => res.send('Hello, world!'));
+
 
 
 app.use(profilePictureRouter)
