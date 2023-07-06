@@ -64,7 +64,7 @@ app.use(
 app.use(userRoutes);
 app.use(authenticationRoutes);
 
-app.use(express.static(path.join(__dirname, "../Football-Friends/front-end/football-friends-front-end/football-friends-front-end/build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 //TEST ROUTE
 app.get(
