@@ -11,7 +11,6 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const path = require('path');
 
-const User = require("./Models/user");
 
 
 
