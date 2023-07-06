@@ -9,6 +9,7 @@ const userRoutes = require("./Routers/users");
 const authenticationRoutes = require("./Routers/authentication");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
+const path = require('path');
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
