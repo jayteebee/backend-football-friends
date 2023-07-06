@@ -11,6 +11,7 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const path = require('path');
 
+
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
@@ -59,6 +60,12 @@ app.use(
 
 app.use(userRoutes);
 app.use(authenticationRoutes);
+
+app.use(express.static(path.join(__dirname, "../Football-Friends/front-end/football-friends-front-end/football-friends-front-end/build")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../Football-Friends/front-end/football-friends-front-end/football-friends-front-end/build", 'index.html')); // replace 'client/build' with the path to your React app's build directory
+});
 
 //TEST ROUTE
 app.get(
