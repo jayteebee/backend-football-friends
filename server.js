@@ -20,7 +20,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 
-
 // const port = process.env.EXPRESS_PORT || 5001
 const port = process.env.PORT || 5001;
 
@@ -64,7 +63,7 @@ app.use(
 app.use(userRoutes);
 app.use(authenticationRoutes);
 
-app.use(express.static(path.join(__dirname, "build")));
+// app.use(express.static(path.join(__dirname, "build")));
 
 //TEST ROUTE
 app.get(
@@ -88,9 +87,9 @@ app.use(profilePictureRouter)
 // Makes the files in the uploads folder accessible through our /uploads endpoint created here
 app.use("/uploads", express.static("uploads"));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build", 'index.html')); // replace 'client/build' with the path to your React app's build directory
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "build", 'index.html')); // replace 'client/build' with the path to your React app's build directory
+// });
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
