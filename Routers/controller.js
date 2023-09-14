@@ -67,6 +67,8 @@ const updateOneUser = async (req, res) => {
 
 const validateUser = async (req, res) => {
   console.log("random", req)
+  res.setHeader("Access-Control-Allow-Origin", "https://football-friends.vercel.app");
+
   try {
     if (req.body.email && req.body.password) {
       myUser = await User.findOne({ email: req.body.email });
