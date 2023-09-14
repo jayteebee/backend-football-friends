@@ -54,24 +54,24 @@ mongoose.connection.once('open', () => console.log('Connected to MongoDB'));
 // MIDDLEWARE
 app.use(express.json());
 
-const allowedOrigins = [
-  "https://football-friends.vercel.app",
-];
+// const allowedOrigins = [
+//   "https://football-friends.vercel.app",
+// ];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or curl requests)
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-);
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       // Allow requests with no origin (like mobile apps or curl requests)
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//   })
+// );
 
-app.options('*', cors());
+// app.options('*', cors());
 
 // const corsOptions = {
 //   origin: "*", 
@@ -79,6 +79,7 @@ app.options('*', cors());
 
 // app.use(cors(corsOptions));
 
+app.use(cors());
 
 
 app.use(userRoutes);
