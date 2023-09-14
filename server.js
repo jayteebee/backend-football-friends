@@ -54,8 +54,21 @@ mongoose.connection.once('open', () => console.log('Connected to MongoDB'));
 // MIDDLEWARE
 app.use(express.json());
 
+const allowedOrigins = [
+  "https://football-friends.vercel.app",
+];
+
 app.use(
-  cors()
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
 );
 
 
