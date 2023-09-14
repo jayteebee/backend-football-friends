@@ -71,6 +71,8 @@ app.use(
   })
 );
 
+app.options('*', cors());
+
 // const corsOptions = {
 //   origin: "*", 
 // };
