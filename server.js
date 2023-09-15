@@ -97,10 +97,10 @@ app.use(express.json());
 //   next();
 // });
 
-const origins = ["https://football-friends.vercel.app", "https://football-friends-ck4sukflv-jayteebee.vercel.app", "football-friends-git-jb-dev-jayteebee.vercel.app" ]
+// const origins = ["https://football-friends.vercel.app", "https://football-friends-ck4sukflv-jayteebee.vercel.app", "football-friends-git-jb-dev-jayteebee.vercel.app" ]
 
 app.use(cors({
-  origin: origins
+  origin: "*"
 }))
 
 
