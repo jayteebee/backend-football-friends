@@ -79,25 +79,28 @@ app.use(express.json());
 
 // app.use(cors(corsOptions));
 
-const corsOptions = {
-  origin: "https://football-friends.vercel.app", 
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, 
-  optionsSuccessStatus: 204, 
-};
+// const corsOptions = {
+//   origin: "https://football-friends.vercel.app", 
+//   methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
+//   credentials: true, 
+//   optionsSuccessStatus: 204, 
+// };
 
-app.use(cors(corsOptions)); 
+// app.use(cors(corsOptions)); 
 
-// Add a middleware to set the Access-Control-Allow-Origin header
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://football-friends.vercel.app");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", true); 
-  next();
-});
+// // Add a middleware to set the Access-Control-Allow-Origin header
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "https://football-friends.vercel.app");
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   res.header("Access-Control-Allow-Credentials", true); 
+//   next();
+// });
 
 
+app.use(cors({
+  origin: "https://football-friends.vercel.app"
+}))
 
 
 app.use(userRoutes);
