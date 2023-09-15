@@ -100,7 +100,7 @@ app.use(express.json());
 const origins = ["https://football-friends.vercel.app", "football-friends-5bkzvz3l6-jayteebee.vercel.app", "football-friends-git-jb-dev-jayteebee.vercel.app" ]
 
 app.use(cors({
-  origin: "football-friends-5bkzvz3l6-jayteebee.vercel.app",
+  origin: "*",
   credentials: true,
 }))
 
