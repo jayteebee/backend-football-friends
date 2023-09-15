@@ -79,7 +79,15 @@ app.use(express.json());
 
 // app.use(cors(corsOptions));
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://football-friends.vercel.app", 
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, 
+  optionsSuccessStatus: 204, 
+};
+
+app.use(cors(corsOptions));
+
 
 
 app.use(userRoutes);
