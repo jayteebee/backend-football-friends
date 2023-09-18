@@ -54,49 +54,6 @@ mongoose.connection.once('open', () => console.log('Connected to MongoDB'));
 // MIDDLEWARE
 app.use(express.json());
 
-// const allowedOrigins = [
-//   "https://football-friends.vercel.app",
-// ];
-
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       // Allow requests with no origin (like mobile apps or curl requests)
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//   })
-// );
-
-// app.options('*', cors());
-
-// const corsOptions = {
-//   origin: "*", 
-// };
-
-// app.use(cors(corsOptions));
-
-// const corsOptions = {
-//   origin: "https://football-friends.vercel.app", 
-//   methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
-//   credentials: true, 
-//   optionsSuccessStatus: 204, 
-// };
-
-// app.use(cors(corsOptions)); 
-
-// // Add a middleware to set the Access-Control-Allow-Origin header
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "https://football-friends.vercel.app");
-//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//   res.header("Access-Control-Allow-Credentials", true); 
-//   next();
-// });
-
 const origins = ["https://football-friends.vercel.app", "football-friends-21isjh374-jayteebee.vercel.app", "football-friends-git-jb-dev-jayteebee.vercel.app" ]
 
 app.use(cors({
